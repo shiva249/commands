@@ -1,0 +1,2 @@
+#to get instance details with ip, os, root volume size
+aws ec2 describe-instances --query 'Reservations[*].Instances[*].[InstanceId, PublicIpAddress, Platform, RootDeviceName, BlockDeviceMappings[?DeviceName==`/dev/xvda`].Ebs.VolumeSize]' --output table
